@@ -1,13 +1,11 @@
 #!/usr/bin/env python3
-"""Function  takes an integer and returns  asyncio.Task."""
-import time
+"""Returns an asyncio.Task for wait_random with a given delay."""
 import asyncio
 
 wait_random = __import__('0-basic_async_syntax').wait_random
 
 def task_wait_random(max_delay: int = 0) -> asyncio.Task:
     """
-    Takes max_delay as an argument and returns .
+    Creates and returns an asyncio.Task for wait_random.
     """
-    task = asyncio.create_task(wait_random(max_delay))
-    return task
+    return asyncio.create_task(wait_random(max_delay))
