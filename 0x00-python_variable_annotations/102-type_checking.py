@@ -1,19 +1,23 @@
 #!/usr/bin/env python3
-"""Function to zoom an array by a given factor."""
+"""
+Type Checking
+"""
+from typing import Union, Any, Mapping, Tuple, List
 
-from typing import List, Tuple, Union
 
-
-def zoom_array(lst: Tuple[int, ...], factor: int = 2) -> List[int]:
-    """Returns a list where each element """
-    zoomed_in: List[int] = [item for item in lst for _ in range(factor)]
+def zoom_array(lst: Tuple, factor: int = 2) -> List:
+    """
+    zoom
+    """
+    zoomed_in: List = [
+        item for item in lst
+        for i in range(factor)
+    ]
     return zoomed_in
 
 
-array = (12, 72, 91)  # Changed from list
+array = tuple([12, 72, 91])
 
+zoom_2x = zoom_array(array)
 
-zoom_2x = zoom_array(array) # Changed from list
-
-
-zoom_3x = zoom_array(array, 3) # Changed from list
+zoom_3x = zoom_array(array, int(3.0))
